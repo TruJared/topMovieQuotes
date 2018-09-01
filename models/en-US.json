@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "Top Movie Quotes",
+      "invocationName": "top movie quotes",
       "types": [],
       "intents": [
         {
@@ -17,6 +17,10 @@
           "samples": []
         },
         {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
           "name": "GetQuoteIntent",
           "slots": [],
           "samples": [
@@ -28,12 +32,10 @@
             "Tell me a quote"
           ]
         },
-        // TODO rename Easter Egg //
-
         {
           "name": "EasterEggIntent",
           "slots": [],
-          "sample": "easter egg"
+          "samples": ["easter egg"]
         }
       ]
     }

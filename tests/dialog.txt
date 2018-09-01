@@ -1,4 +1,6 @@
 LaunchRequest
+GetQuoteIntent
+EasterEggIntent
 
 # AMAZON.StopIntent
 # AMAZON.FallbackIntent
