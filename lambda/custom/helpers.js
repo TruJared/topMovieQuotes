@@ -1,5 +1,7 @@
 let quotes = require('./quotes');
 
+const entries = Object.entries(quotes);
+
 // * https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array //
 const shuffle = (array) => {
   const a = array;
@@ -15,19 +17,19 @@ const shuffle = (array) => {
   return a;
 };
 
-const getSessionData = (handlerInput) => {
+const sessionData = (handlerInput) => {
   const attributes = handlerInput.attributesManager.getSessionAttributes();
 
-  if (!attributes.counter) {
+  if (!attributes.counter || attributes.counter >= entries.length) {
     attributes.counter = 0;
     // shuffle quotes to randomize Alexa responses
-    const entries = Object.entries(quotes);
     quotes = shuffle(entries);
   }
   attributes.quote = quotes[attributes.counter];
   attributes.counter += 1;
+  handlerInput.attributesManager.setSessionAttributes(attributes);
 };
 
 module.exports = {
-  getSessionData,
+  sessionData,
 };

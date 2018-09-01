@@ -24,10 +24,13 @@ const GetQuoteIntentHandler = {
     );
   },
   handle(handlerInput) {
-    const sessionData = Helpers.getSessionData(handlerInput);
+    Helpers.sessionData(handlerInput);
+    const attributes = handlerInput.attributesManager.getSessionAttributes();
     // pass sessionData to quote to avoid getting repeat quotes
-    const quote = Helpers.getQuote(sessionData);
-    const speechText = `This is a quote! ${quote} Would you like to hear another?`;
+    // const movie = Helpers.getQuote(sessionData.quote[0]);
+    // const quote = Helpers.getQuote(sessionData.quote[1]);
+    console.dir(attributes, { depth: null, color: true });
+    const speechText = 'the quote. From the movie movie. Would you like to hear another?';
 
     return (
       handlerInput.responseBuilder

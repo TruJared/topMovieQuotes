@@ -1,13 +1,13 @@
 LaunchRequest
 GetQuoteIntent
-EasterEggIntent
-
-# AMAZON.StopIntent
-# AMAZON.FallbackIntent
+AMAZON.YesIntent
+AMAZON.NoIntent
+AMAZON.CancelIntent
 # fakeIntent cause a throw error
 fakeIntent
 # AMAZON.HelpIntent
-# AMAZON.CancelIntent
-# AMAZON.YesIntent
-# AMAZON.NoIntent
+# EasterEggIntent
 # AMAZON.RepeatIntent
+
+# AMAZON.StopIntent
+# AMAZON.FallbackIntent
