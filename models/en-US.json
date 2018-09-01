@@ -1,0 +1,41 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "Top Movie Quotes",
+      "types": [],
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "GetQuoteIntent",
+          "slots": [],
+          "samples": [
+            "Quote",
+            "A Quote",
+            "Get a quote",
+            "Say a quote",
+            "Get me a quote",
+            "Tell me a quote"
+          ]
+        },
+        // TODO rename Easter Egg //
+
+        {
+          "name": "EasterEggIntent",
+          "slots": [],
+          "sample": "easter egg"
+        }
+      ]
+    }
+  }
+}

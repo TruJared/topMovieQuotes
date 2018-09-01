@@ -1,0 +1,11 @@
+LaunchRequest
+
+# AMAZON.StopIntent
+# AMAZON.FallbackIntent
+# fakeIntent cause a throw error
+fakeIntent
+# AMAZON.HelpIntent
+# AMAZON.CancelIntent
+# AMAZON.YesIntent
+# AMAZON.NoIntent
+# AMAZON.RepeatIntent
