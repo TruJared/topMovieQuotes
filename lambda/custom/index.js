@@ -28,18 +28,16 @@ const GetQuoteIntentHandler = {
     const attributes = handlerInput.attributesManager.getSessionAttributes();
     const movie = attributes.quote[0];
     const quote = attributes.quote[1];
-    const speechText = `${quote} From the movie ${movie}. Would you like to hear another?`;
+    const speechText = `${quote} From ${movie}. Would you like to hear another?`;
 
-    return (
-      handlerInput.responseBuilder
-        .speak(speechText)
-        // .withSimpleCard('Hello World', speechText)
-        .reprompt(speechText)
-        .getResponse()
-    );
+    return handlerInput.responseBuilder
+      .speak(speechText)
+      .withSimpleCard('Top Movie Quotes', `${quote} From ${movie}.`)
+      .reprompt(speechText)
+      .getResponse();
   },
 };
-// todo add in Breaking Bad quote  //
+
 const GetEasterEggHandler = {
   canHandle(handlerInput) {
     return (
@@ -48,15 +46,17 @@ const GetEasterEggHandler = {
     );
   },
   handle(handlerInput) {
-    const speechText = 'This is an easter egg! Would you like to hear a movie quote now?';
+    Helpers.getHiddenQuote(handlerInput);
+    const attributes = handlerInput.attributesManager.getSessionAttributes();
+    const movie = attributes.quote[0]; // ! not a movie //
+    const quote = attributes.quote[1];
+    const speechText = `${quote} From ${movie}. Would you like to hear another?`;
 
-    return (
-      handlerInput.responseBuilder
-        .speak(speechText)
-        // .withSimpleCard('Hello World', speechText)
-        .reprompt(speechText)
-        .getResponse()
-    );
+    return handlerInput.responseBuilder
+      .speak(speechText)
+      .withSimpleCard('You Found The Hidden Quote!!', `${quote} From ${movie}.`)
+      .reprompt(speechText)
+      .getResponse();
   },
 };
 
@@ -73,7 +73,7 @@ const RepeatIntentHandler = {
     const attributes = handlerInput.attributesManager.getSessionAttributes();
     const movie = attributes.quote[0];
     const quote = attributes.quote[1];
-    const speechText = `${quote} From the movie ${movie}. Would you like to hear another?`;
+    const speechText = `${quote} From ${movie}. Would you like to hear another?`;
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -81,7 +81,7 @@ const RepeatIntentHandler = {
       .getResponse();
   },
 };
-// TODO figure out how this actually works ???? //
+
 const FallbackIntentHandler = {
   canHandle(handlerInput) {
     return (
@@ -95,7 +95,6 @@ const FallbackIntentHandler = {
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Top Movie Quotes', speechText)
       .getResponse();
   },
 };
@@ -108,17 +107,16 @@ const HelpIntentHandler = {
     );
   },
   handle(handlerInput) {
-    const speechText = 'Just ask me to Say a quote.';
+    const speechText = 'Just ask me to say a quote.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Top Movie Quotes', speechText)
+      .withSimpleCard('Top Movie Quotes -- HELP', speechText)
       .getResponse();
   },
 };
 
-// TODo change this to the ending lines from Jim Carey movie //
 const CancelAndStopIntentHandler = {
   canHandle(handlerInput) {
     return (
@@ -129,7 +127,7 @@ const CancelAndStopIntentHandler = {
     );
   },
   handle(handlerInput) {
-    const speechText = 'The unknown future rolls toward us. I face it, for the first time, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too.';
+    const speechText = 'The unknown future rolls toward us. I face it, for the first time, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too... Goodbye';
 
     return handlerInput.responseBuilder
       .speak(speechText)
