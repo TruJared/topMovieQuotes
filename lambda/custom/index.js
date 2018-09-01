@@ -27,10 +27,9 @@ const GetQuoteIntentHandler = {
     Helpers.sessionData(handlerInput);
     const attributes = handlerInput.attributesManager.getSessionAttributes();
     // pass sessionData to quote to avoid getting repeat quotes
-    // const movie = Helpers.getQuote(sessionData.quote[0]);
-    // const quote = Helpers.getQuote(sessionData.quote[1]);
-    console.dir(attributes, { depth: null, color: true });
-    const speechText = 'the quote. From the movie movie. Would you like to hear another?';
+    const movie = attributes.quote[0];
+    const quote = attributes.quote[1];
+    const speechText = `${quote} From the movie ${movie}. Would you like to hear another?`;
 
     return (
       handlerInput.responseBuilder
