@@ -1,5 +1,5 @@
 const Alexa = require('ask-sdk-core');
-const quotes = require('./quotes');
+const Helpers = require('./helpers');
 
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
@@ -24,7 +24,10 @@ const GetQuoteIntentHandler = {
     );
   },
   handle(handlerInput) {
-    const speechText = 'This is a quote! Would you like to hear another?';
+    const sessionData = Helpers.getSessionData(handlerInput);
+    // pass sessionData to quote to avoid getting repeat quotes
+    const quote = Helpers.getQuote(sessionData);
+    const speechText = `This is a quote! ${quote} Would you like to hear another?`;
 
     return (
       handlerInput.responseBuilder
