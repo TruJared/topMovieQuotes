@@ -6,7 +6,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to top movie quotes. This simple skill is designed to show off my ability to mimic speech. Simply ask me to say a quote, and I will attempt to mimic a movie quote from a list of over 100 movies. Action! <audio src ="https://s3.amazonaws.com/ask-soundlibrary/home/amzn_sfx_door_shut_01.mp3" />';
+    const speechText = '<prosody rate = "105%" volume = "+2dB" > Welcome to Top Movie Quotes.</prosody>This simple skill is designed to show off my ability to mimic speech. Simply ask me to say a quote, and I will quote a line from a famous movie.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -90,7 +90,7 @@ const FallbackIntentHandler = {
     );
   },
   handle(handlerInput) {
-    const speechText = "Great Scott! I'm not sure I can handle that request right now";
+    const speechText = '<say-as interpret-as="interjection">Great Scott!</say-as> I\'m not sure I can handle that request right now.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -152,9 +152,10 @@ const ErrorHandler = {
   },
   handle(handlerInput, error) {
     console.log(`Error handled: ${error.message}`);
+    const effect = "<audio src='https://s3.amazonaws.com/ask-soundlibrary/scifi/amzn_sfx_scifi_alien_voice_04.mp3'/>";
 
     return handlerInput.responseBuilder
-      .speak('Malfunction. Need input.')
+      .speak(`${effect} Malfunction. Need input.`)
       .reprompt('Malfunction. Need input.')
       .getResponse();
   },
