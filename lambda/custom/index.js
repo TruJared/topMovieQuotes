@@ -6,7 +6,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = '<prosody rate = "105%" volume = "+2dB" > Welcome to Top Movie Quotes.</prosody>This simple skill is designed to show off my ability to mimic speech. Simply ask me to say a quote, and I will quote a line from a famous movie.';
+    const speechText = '<prosody rate = "105%" volume = "+2dB"> Welcome to Top Movie Quotes.</prosody>This simple skill is designed to show off my ability to mimic speech. Simply ask me to say a quote, and I will quote a line from a famous movie.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -26,10 +26,8 @@ const GetQuoteIntentHandler = {
   handle(handlerInput) {
     Helpers.sessionData(handlerInput);
     const attributes = handlerInput.attributesManager.getSessionAttributes();
-    const movie = attributes.quote[0];
-    const quote = attributes.quote[1];
-    const speechText = `${quote} From ${movie}. Would you like to hear another?`;
-
+    const { movie, quote, url } = attributes.quoteData;
+    const speechText = ` <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
     return handlerInput.responseBuilder
       .speak(speechText)
       .withSimpleCard('Top Movie Quotes', `${quote} From ${movie}.`)
@@ -48,9 +46,8 @@ const GetEasterEggHandler = {
   handle(handlerInput) {
     Helpers.getHiddenQuote(handlerInput);
     const attributes = handlerInput.attributesManager.getSessionAttributes();
-    const movie = attributes.quote[0]; // ! not a movie //
-    const quote = attributes.quote[1];
-    const speechText = `${quote} From ${movie}. Would you like to hear another?`;
+    const { movie, quote, url } = attributes.quoteData;
+    const speechText = ` <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -71,9 +68,8 @@ const RepeatIntentHandler = {
   },
   handle(handlerInput) {
     const attributes = handlerInput.attributesManager.getSessionAttributes();
-    const movie = attributes.quote[0];
-    const quote = attributes.quote[1];
-    const speechText = `${quote} From ${movie}. Would you like to hear another?`;
+    const { movie, url } = attributes.quoteData;
+    const speechText = ` <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -127,10 +123,10 @@ const CancelAndStopIntentHandler = {
     );
   },
   handle(handlerInput) {
+    const audio = process.env.GOODBYE;
     const speechText = 'The unknown future rolls toward us. I face it, for the first time, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too... Goodbye';
-
     return handlerInput.responseBuilder
-      .speak(speechText)
+      .speak(`<audio src="${audio}" />`)
       .withSimpleCard('Top Movie Quotes', speechText)
       .getResponse();
   },
