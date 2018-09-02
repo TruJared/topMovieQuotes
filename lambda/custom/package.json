@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cd ../../tests && node testflow.js",
+    "test": "",
+    "testflow": "cd ../../tests && node testflow.js",
     "deploy": "cd ../../ && ask deploy"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ask-sdk-core": "^2.0.0",
-    "ask-sdk-model": "^1.0.0"
+    "ask-sdk-model": "^1.0.0",
+    "lambda-local": "^1.5.1"
   },
   "devDependencies": {
     "eslint": "^5.5.0",

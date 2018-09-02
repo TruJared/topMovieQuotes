@@ -131,7 +131,7 @@ const CancelAndStopIntentHandler = {
     const speechText = 'The unknown future rolls toward us. I face it, for the first time, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too... Goodbye';
     console.log(process.env);
     return handlerInput.responseBuilder
-      .speak(`${speechAudio}...Goodbye`)
+      .speak(`${speechAudio}`)
       .withSimpleCard('Top Movie Quotes', speechText)
       .getResponse();
   },
