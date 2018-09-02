@@ -38,7 +38,7 @@ const getHiddenQuote = (handlerInput) => {
     movie: "Breaking Bad'",
     quote:
       'I am not in danger, Skyler. I am the danger. A guy opens his door and gets shot and you think that of me? No. I am the one who knocks!',
-    url: 'process.env.HIDDEN_QUOTE',
+    url: process.env.HIDDEN_QUOTE,
   };
 
   if (!attributes.counter || attributes.counter >= values.length) {
