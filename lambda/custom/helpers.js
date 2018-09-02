@@ -1,6 +1,6 @@
 let quotes = require('./quotes');
 
-const entries = Object.entries(quotes);
+const values = Object.values(quotes);
 
 // * https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array //
 const shuffle = (array) => {
@@ -20,12 +20,12 @@ const shuffle = (array) => {
 const sessionData = (handlerInput) => {
   const attributes = handlerInput.attributesManager.getSessionAttributes();
 
-  if (!attributes.counter || attributes.counter >= entries.length) {
+  if (!attributes.counter || attributes.counter >= values.length) {
     attributes.counter = 0;
     // shuffle quotes to randomize Alexa responses
-    quotes = shuffle(entries);
+    quotes = shuffle(values);
   }
-  attributes.quote = quotes[attributes.counter];
+  attributes.quoteData = quotes[attributes.counter];
   attributes.counter += 1;
   handlerInput.attributesManager.setSessionAttributes(attributes);
 };
@@ -34,17 +34,19 @@ const sessionData = (handlerInput) => {
 // * also prevents counter from +1
 const getHiddenQuote = (handlerInput) => {
   const attributes = handlerInput.attributesManager.getSessionAttributes();
-  const hiddenQuote = [
-    'Breaking Bad',
-    'I am not in danger, Skyler. I am the danger. A guy opens his door and gets shot and you think that of me? No. I am the one who knocks!',
-  ];
+  const hiddenQuote = {
+    movie: "Breaking Bad'",
+    quote:
+      'I am not in danger, Skyler. I am the danger. A guy opens his door and gets shot and you think that of me? No. I am the one who knocks!',
+    url: 'process.env.HIDDEN_QUOTE',
+  };
 
-  if (!attributes.counter || attributes.counter >= entries.length) {
+  if (!attributes.counter || attributes.counter >= values.length) {
     attributes.counter = 0;
     // shuffle quotes to randomize Alexa responses
-    quotes = shuffle(entries);
+    quotes = shuffle(values);
   }
-  attributes.quote = hiddenQuote;
+  attributes.quoteData = hiddenQuote;
   handlerInput.attributesManager.setSessionAttributes(attributes);
 };
 
