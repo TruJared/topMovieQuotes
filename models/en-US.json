@@ -47,7 +47,12 @@
         {
           "name": "EasterEggIntent",
           "slots": [],
-          "samples": ["heisenberg", "knocks", "breaking bad", "science bitch"]
+          "samples": [
+            "Call Me Heisenberg",
+            "I'm the one who knocks",
+            "breaking bad",
+            "science bitch"
+          ]
         }
       ]
     }

@@ -6,7 +6,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = '<prosody rate = "105%" volume = "+2dB" > Welcome to Top Movie Quotes.</prosody>This simple skill is designed to show off my ability to mimic speech. Simply ask me to say a quote, and I will quote a line from a famous movie.';
+    const speechText = '<audio src="https://s3.us-east-1.amazonaws.com/top-movie-quotes/audio.75ba22e9-384e-4c40-892c-3e0b305ae81b.mp3"/>';
 
     return handlerInput.responseBuilder
       .speak(speechText)
