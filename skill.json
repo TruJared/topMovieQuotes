@@ -5,11 +5,11 @@
         "en-US": {
           "summary": "Sample Short Description",
           "examplePhrases": [
-            "Alexa open hello world",
-            "Alexa tell hello world hello",
-            "Alexa ask hello world say hello"
+            "Alexa open Top Movie Quotes",
+            "Alexa tell Top Movie Quotes to get me quote",
+            "Alexa ask Top Movie Quotes to say a quote"
           ],
-          "name": "movieQuotes",
+          "name": "Top 100 Movie Quotes",
           "description": "Sample Full Description"
         }
       },

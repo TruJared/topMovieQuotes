@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cd ../../tests && node testflow.js",
-    "deploy": "cd ../../ && ask deploy"
+    "deploy": "cd ../../ && ask deploy",
+    "deploy-f": "cd ../../ && ask deploy --force"
   },
   "author": "",
   "license": "ISC",

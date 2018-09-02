@@ -38,6 +38,7 @@ const getHiddenQuote = (handlerInput) => {
     movie: "Breaking Bad'",
     quote:
       'I am not in danger, Skyler. I am the danger. A guy opens his door and gets shot and you think that of me? No. I am the one who knocks!',
+    effect: '',
     url: process.env.HIDDEN_QUOTE,
   };
 
@@ -46,7 +47,6 @@ const getHiddenQuote = (handlerInput) => {
     // shuffle quotes to randomize Alexa responses
     quotes = shuffle(values);
   }
-  attributes.effect = null;
   attributes.quoteData = hiddenQuote;
   handlerInput.attributesManager.setSessionAttributes(attributes);
 };

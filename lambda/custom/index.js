@@ -6,7 +6,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = '<prosody rate = "105%" volume = "+2dB"> Welcome to Top Movie Quotes.</prosody>This simple skill is designed to show off my ability to mimic speech. Simply ask me to say a quote, and I will quote a line from a famous movie.';
+    const speechText = '<prosody rate = "105%" volume = "+2dB"> Welcome to Top Movie Quotes.</prosody> Simply ask me to say a quote, and I will do my best to accurately quote a line from a famous movie. You can always ask me to repeat any quote after I say it.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -29,7 +29,7 @@ const GetQuoteIntentHandler = {
     const {
       effect, movie, quote, url,
     } = attributes.quoteData;
-    const speechText = ` ${effect} <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
+    const speechText = ` ${effect} <audio src="${url}" /> <break time="500ms" />From ${movie}. Would you like to hear another?`;
     return handlerInput.responseBuilder
       .speak(speechText)
       .withSimpleCard('Top Movie Quotes', `${quote} From ${movie}.`)
@@ -51,7 +51,7 @@ const GetEasterEggHandler = {
     const {
       effect, movie, quote, url,
     } = attributes.quoteData;
-    const speechText = ` ${effect} <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
+    const speechText = ` ${effect} <audio src="${url}" /> <break time="500ms" />From ${movie}. Would you like to hear another?`;
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -73,7 +73,7 @@ const RepeatIntentHandler = {
   handle(handlerInput) {
     const attributes = handlerInput.attributesManager.getSessionAttributes();
     const { effect, movie, url } = attributes.quoteData;
-    const speechText = ` ${effect} <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
+    const speechText = `${effect} <audio src="${url}" /> <break time="500ms" />From ${movie}. Would you like to hear another?`;
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -107,7 +107,7 @@ const HelpIntentHandler = {
     );
   },
   handle(handlerInput) {
-    const speechText = 'Just ask me to say a quote.';
+    const speechText = 'Just ask me to say a quote. You can also ask me to repeat a quote after I say it.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
