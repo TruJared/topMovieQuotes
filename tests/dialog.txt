@@ -6,7 +6,7 @@
 #fakeIntent
 #AMAZON.HelpIntent
 #EasterEggIntent
-##AMAZON.RepeatIntent
+#AMAZON.RepeatIntent
 #AMAZON.YesIntent
 #AMAZON.FallbackIntent
 AMAZON.NoIntent
