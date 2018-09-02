@@ -26,8 +26,10 @@ const GetQuoteIntentHandler = {
   handle(handlerInput) {
     Helpers.sessionData(handlerInput);
     const attributes = handlerInput.attributesManager.getSessionAttributes();
-    const { movie, quote, url } = attributes.quoteData;
-    const speechText = ` <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
+    const {
+      effect, movie, quote, url,
+    } = attributes.quoteData;
+    const speechText = ` ${effect} <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
     return handlerInput.responseBuilder
       .speak(speechText)
       .withSimpleCard('Top Movie Quotes', `${quote} From ${movie}.`)
@@ -46,8 +48,10 @@ const GetEasterEggHandler = {
   handle(handlerInput) {
     Helpers.getHiddenQuote(handlerInput);
     const attributes = handlerInput.attributesManager.getSessionAttributes();
-    const { movie, quote, url } = attributes.quoteData;
-    const speechText = ` <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
+    const {
+      effect, movie, quote, url,
+    } = attributes.quoteData;
+    const speechText = ` ${effect} <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -68,8 +72,8 @@ const RepeatIntentHandler = {
   },
   handle(handlerInput) {
     const attributes = handlerInput.attributesManager.getSessionAttributes();
-    const { movie, url } = attributes.quoteData;
-    const speechText = ` <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
+    const { effect, movie, url } = attributes.quoteData;
+    const speechText = ` ${effect} <audio src="${url}" /> <break time="100ms" />From ${movie}. Would you like to hear another?`;
 
     return handlerInput.responseBuilder
       .speak(speechText)

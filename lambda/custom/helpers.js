@@ -46,6 +46,7 @@ const getHiddenQuote = (handlerInput) => {
     // shuffle quotes to randomize Alexa responses
     quotes = shuffle(values);
   }
+  attributes.effect = null;
   attributes.quoteData = hiddenQuote;
   handlerInput.attributesManager.setSessionAttributes(attributes);
 };
