@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "top movie quotes",
+      "invocationName": "AFI Quotes",
       "types": [],
       "intents": [
         {

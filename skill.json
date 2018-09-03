@@ -5,11 +5,11 @@
         "en-US": {
           "summary": "Sample Short Description",
           "examplePhrases": [
-            "Alexa open Top Movie Quotes",
-            "Alexa tell Top Movie Quotes to get me quote",
-            "Alexa ask Top Movie Quotes to say a quote"
+            "Alexa open AFI Quotes",
+            "Alexa tell AFI Quotes to get me quote",
+            "Alexa ask AFI Quotes to say a quote"
           ],
-          "name": "Top 100 Movie Quotes",
+          "name": "AFI's 100 Movie Quotes",
           "description": "Sample Full Description"
         }
       },
