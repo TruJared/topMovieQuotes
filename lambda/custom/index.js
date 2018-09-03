@@ -6,7 +6,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = '<prosody rate = "105%" volume = "+2dB"> Welcome to Top Movie Quotes.</prosody> Simply ask me to say a quote, and I will do my best to accurately quote a line from a famous movie. You can always ask me to repeat any quote after I say it.';
+    const speechText = '<prosody rate = "105%" volume = "+2dB"> Welcome to AFI Movie Quotes.</prosody> Simply ask me to say a quote, and I will do my best to accurately quote a line from a famous movie. You can always ask me to repeat any quote after I say it.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
