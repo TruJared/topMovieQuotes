@@ -1,0 +1,62 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "afi quotes",
+      "types": [],
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.RepeatIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "GetQuoteIntent",
+          "slots": [],
+          "samples": [
+            "Quote",
+            "A Quote",
+            "Get a quote",
+            "Say a quote",
+            "Get me a quote",
+            "Tell me a quote",
+            "Quote a movie",
+            "Give me a top one hundred quote"
+          ]
+        },
+        {
+          "name": "EasterEggIntent",
+          "slots": [],
+          "samples": [
+            "Call Me Heisenberg",
+            "I'm the one who knocks",
+            "breaking bad",
+            "science bitch"
+          ]
+        }
+      ]
+    }
+  }
+}

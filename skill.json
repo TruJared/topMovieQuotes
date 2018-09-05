@@ -13,15 +13,62 @@
           "description": "A fun skill that attempts to have Alexa say a quote from a famous movie. Every quote is spoken by Alexa, or makes use of her built-in functionality. You won't find any movie audio clips here. Obviously, results vary from quote to quote; some are amazingly accurate and will sync perfectly with the actual quote, while others are humorously bad. Definitely not the most ground-breakings skill available on Alexa, but it is a fun example of what can be done with her speech using various Amazon services.\\n HOW TO USE\\n Simply just say, 'Alexa, open AFI quotes', after the short introduction just ask Alexa to 'get a quote'. At anytime you can ask for help by saying, 'help' or have Alexa repeat the last quote by saying, 'repeat' or 'say again'."
         }
       },
+
       "isAvailableWorldwide": true,
       "testingInstructions": "Sample Testing Instructions.",
       "category": "EDUCATION_AND_REFERENCE",
-      "distributionCountries": []
+      "distributionCountries": [],
+      "keywords": [
+        "movie",
+        "quote",
+        "top",
+        "AFI",
+        "polly",
+        "speak",
+        "speech",
+        "film",
+        "top",
+        "films",
+        "funny movie quotes",
+        "no audio file",
+        "movie quotes",
+        "alexa quote movie",
+        "afi movie quotes",
+        "top movie quotes",
+        "top quotes",
+        "film quotes",
+        "best movie quotes",
+        "best quotes",
+        "historical movie quotes",
+        "afi quotes",
+        "funny",
+        "laugh",
+        "funny quotes",
+        "quotes laugh",
+        "hollywood quotes",
+        "favorite quotes",
+        "favorite movies",
+        "favorite movie quotes"
+      ],
+      "smallIconUri": "https://s3.amazonaws.com/p0pcorn-bucket/icon_108_A2Z.png",
+      "largeIconUri": "https://s3.amazonaws.com/p0pcorn-bucket/icon_512_A2Z.png"
     },
     "apis": {
       "custom": {
         "endpoint": {
           "sourceDir": "lambda/custom"
+        }
+      }
+    },
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "isExportCompliant": false,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": false,
+      "locales": {
+        "en-US": {
+          "privacyPolicyUrl": "https://www.freeprivacypolicy.com/privacy/view/1a335e534a6efc86c0c1354b2f3d5d02"
         }
       }
     },
