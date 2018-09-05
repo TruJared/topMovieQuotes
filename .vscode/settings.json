@@ -1,5 +1,29 @@
 {
   "cSpell.words": [
     "Skyler"
+  ],
+  "cSpell.language": ",en,en-US",
+  "cSpell.enabledLanguageIds": [
+    "c",
+    "cpp",
+    "csharp",
+    "css",
+    "go",
+    "handlebars",
+    "html",
+    "jade",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "latex",
+    "markdown",
+    "php",
+    "python",
+    "restructuredtext",
+    "ruby",
+    "text",
+    "typescript",
+    "typescriptreact",
+    "yml"
   ]
 }
