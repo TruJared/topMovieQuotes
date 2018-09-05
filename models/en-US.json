@@ -41,7 +41,9 @@
             "Get a quote",
             "Say a quote",
             "Get me a quote",
-            "Tell me a quote"
+            "Tell me a quote",
+            "Quote a movie",
+            "Give me a top one hundred quote"
           ]
         },
         {

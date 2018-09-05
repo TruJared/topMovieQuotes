@@ -3,14 +3,14 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "A simple skill that attempts to mimic a random quote from AFI's list of top 100 movie quotes WITHOUT using any audio clips from the actual movies.",
           "examplePhrases": [
             "Alexa open AFI Quotes",
-            "Alexa tell AFI Quotes to get me quote",
-            "Alexa ask AFI Quotes to say a quote"
+            "'Alexa open AFI Quotes' then 'say a quote'",
+            "'Alexa open AFI Quotes' then 'get a quote'"
           ],
           "name": "AFI 100 Movie Quotes",
-          "description": "Sample Full Description"
+          "description": "A fun skill that attempts to have Alexa say a quote from a famous movie. Every quote is spoken by Alexa, or makes use of her built-in functionality. You won't find any movie audio clips here. Obviously, results vary from quote to quote; some are amazingly accurate and will sync perfectly with the actual quote, while others are humorously bad. Definitely not the most ground-breakings skill available on Alexa, but it is a fun example of what can be done with her speech using various Amazon services.\\n HOW TO USE\\n Simply just say, 'Alexa, open AFI quotes', after the short introduction just ask Alexa to 'get a quote'. At anytime you can ask for help by saying, 'help' or have Alexa repeat the last quote by saying, 'repeat' or 'say again'."
         }
       },
       "isAvailableWorldwide": true,
